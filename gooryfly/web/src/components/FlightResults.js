@@ -1,6 +1,13 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const FlightResults = () => {
+  const navigate = useNavigate();
+
+  const handleBooking = () => {
+    navigate('/booking');
+  };
+
   return (
     <div className="container mx-auto px-4 py-8">
       <h2 className="text-2xl font-bold mb-6 text-right">نتائج البحث</h2>
@@ -35,7 +42,10 @@ const FlightResults = () => {
           
           <div className="flex-1 text-center mt-4 md:mt-0">
             <div className="text-2xl font-bold text-blue-600">1,250 ريال</div>
-            <button className="bg-blue-600 text-white px-6 py-2 rounded-full mt-2 hover:bg-blue-700 transition duration-300">
+            <button 
+              onClick={handleBooking}
+              className="bg-blue-600 text-white px-6 py-2 rounded-full mt-2 hover:bg-blue-700 transition duration-300"
+            >
               احجز الآن
             </button>
           </div>
